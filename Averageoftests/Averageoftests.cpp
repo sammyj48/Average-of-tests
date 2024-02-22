@@ -1,5 +1,10 @@
 #include <iostream>
 #include "standaloneExitChoice.h"
+#ifdef _DEBUG
+#pragma comment(lib, "standaloneExitChoice.Debug.lib")
+#else
+#pragma comment(lib, "standaloneExitChoice.Release.lib")
+#endif
 using namespace std;
 
 int main() {
@@ -27,5 +32,5 @@ int main() {
 	stdln::key2 = 'A';
 	stdln::okey1 = 'e';
 	stdln::okey2 = 'E';
-	stdln::exitchoice();
+	stdln::exitchoice(2);
 }
